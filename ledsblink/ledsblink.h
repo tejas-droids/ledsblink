@@ -4,27 +4,31 @@
 */
 
 // ensure this library description is only included once
-#ifndef ledsblink_h
-#define ledsblink_h
+#ifndef segment_h
+#define segment_h
 
 // include types & constants of Wiring core API
 #include "Arduino.h"
 
 // library interface description
-class ledsblink
+class segment
 {
   // user-accessible "public" interface
   public:
-   ledsblink(int PinFirst, int PinSecond, int PinThird, int PinFourth, int PinFifth);
+   fourdigital(int PinFirst, int PinSecond, int PinThird, int PinFourth);
+   eightsegmental(int segA, int segB, int segC, int segD, int segE, int segF,int segG);
     
-	void flash(int delayTimeForFlash);
-	void on();
+	void  lightnumber(int number to display);
+
+	void on(int pin_number);
 	void off();
 
   // library-accessible "private" interface
   private:
-    int _PinFirst, _PinSecond, _PinThird, _PinFourth, _PinFifth;
-    
+    int _PinFirst, _PinSecond, _PinThird, _PinFourth;
+    int segA, int segB, int segC, int segD, int segE, int segF,int segG;
+	
+	void  lightnumber(int number_to_display);
 };
 
 #endif
